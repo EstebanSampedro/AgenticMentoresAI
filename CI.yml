@@ -1,0 +1,48 @@
+trigger:
+- '*'
+ 
+resources:
+- repo: self
+ 
+variables:
+  REPOSITORY: '$(Build.Repository.Name)'
+  #VERSION: '1.0'
+  BRANCH: '$(Build.SourceBranchName)'
+  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+    REGISTRY: 'acrudla.azurecr.io'
+  ${{ else }}:
+    REGISTRY: 'acrdlatest.azurecr.io'
+  
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+     name: 'Docker'
+     demands:
+      - agent.name -equals vmubuntu
+    steps:
+   
+    # Build en la raíz del repo (compose.yaml)
+    - bash: |
+        set -euo pipefail
+        export REPOSITORY=$(echo "$(Build.Repository.Name)" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+        export VERSION=$(VERSION)
+        export BRANCH=$(BRANCH)
+        export REGISTRY=$(REGISTRY)
+        docker compose build --pull
+      displayName: docker compose build
+      workingDirectory: $(System.DefaultWorkingDirectory)
+   
+    # Push en la raíz del repo
+    - bash: |
+        set -euo pipefail
+        export REPOSITORY=$(echo "$(Build.Repository.Name)" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+        export VERSION=$(VERSION)
+        export BRANCH=$(BRANCH)
+        export REGISTRY=$(REGISTRY)
+        docker compose push
+      displayName: docker compose push
+      workingDirectory: $(System.DefaultWorkingDirectory)

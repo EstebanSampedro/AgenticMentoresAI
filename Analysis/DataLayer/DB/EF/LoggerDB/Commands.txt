@@ -1,0 +1,12 @@
+﻿//Toda la base
+//Comando
+Scaffold-DbContext "Server=localhost;Database=BasicArchitectureTemplateDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir BasicArchitectureTemplateDB -ContextDir ContextDir -Context BasicArchitectureTemplateContext
+
+//Ejemplo
+Scaffold-DbContext "Server=.;Database=LoggerDB;Trusted_Connection=True;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir DB\Command\LoggerDB\EF -ContextDir DB\Command\LoggerDB\EF\Context -Context LoggerDBContext
+
+Cuando existe cambios en base para actualizar al modelo de EF
+Scaffold-DbContext "Server=localhost;Database=BasicArchitectureTemplateDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir BasicArchitectureTemplateDB -Context BasicArchitectureTemplateContext
+
+//Si existe error se debe forzar la actualización
+Scaffold-DbContext "Server=localhost;Database=BasicArchitectureTemplateDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir BasicArchitectureTemplateDB -Context BasicArchitectureTemplateContext -force

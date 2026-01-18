@@ -1,0 +1,133 @@
+/* Fondo oscuro semitransparente */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Contenedor centrado */
+.popup-modal {
+  animation: fadeInUp 0.3s ease-out;
+  /* (opcional) si quieres formato toast arriba derecha en vez de modal centrado:
+  position: fixed; top: 16px; right: 16px;
+  */
+}
+
+/* Contenido visual */
+.toast-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: #fff;
+  color: #1a1a1a;
+  border-left: 4px solid #e53935;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  width: min(90vw, 480px);
+  max-width: 480px;
+  min-width: 280px;
+  position: relative;   /* 👈 necesario para el posicionamiento absoluto del botón */
+}
+
+/* Botón cerrar */
+.toast-content .close {
+  position: absolute;   /* 👈 lo sacamos del flujo */
+  top: 8px;
+  right: 8px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #444;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.toast-content .close:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Lista y elementos: romper palabras MUY largas */
+.message-list {
+  margin-top: 0.25rem;
+  padding-left: 1rem;
+  list-style-type: disc;
+
+  /* 👇 evita que la lista crezca sin límite */
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.message-list .message {
+  font-size: 0.875rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+
+  /* 👇 claves para que los nombres larguísimos no se desborden */
+  white-space: normal;
+  word-break: break-word;      /* para navegadores modernos */
+  overflow-wrap: anywhere;     /* rompe en cualquier punto si es necesario */
+}
+
+
+.toast-content .icon {
+  color: #e53935;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.toast-content .text {
+  flex: 1;
+}
+
+.toast-content .title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #b71c1c;
+}
+
+.toast-content .message {
+  font-size: 0.9rem;
+}
+
+
+.message-list {
+  margin-top: 0.25rem;
+  padding-left: 1rem;
+  list-style-type: disc;
+}
+
+.message-list .message {
+  font-size: 0.875rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

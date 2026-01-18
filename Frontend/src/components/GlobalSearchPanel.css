@@ -1,0 +1,51 @@
+.global-search-panel {
+    padding: 0.1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100%;
+    color: var(--text-color);
+}
+/* Barra lateral de estudiantes y búsqueda para scroll */
+
+.sidebarPanel::-webkit-scrollbar-button {
+    display: none;
+}
+.SidelbarPanel::-webkit-scrollbar {
+    width: 0.1px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--search-bar-bg);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+}
+
+    .search-bar img {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5rem;
+    }
+
+    .search-bar input {
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        width: 100%;
+        color: var(--text-color);
+        background: transparent;
+    }
+
+.result-block {
+    margin-top: 1rem;
+}
+.result-entry:hover {
+    background: var(--chat-student-bg);
+}
+
+.result-entry {
+    background: var(--select-item-bg);
+    border-radius: 8px;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}

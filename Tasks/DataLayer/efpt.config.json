@@ -1,0 +1,247 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "ListingBookingDBContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "ListingBookingDB",
+   "ProjectRootNamespace": "Academikus.AgenteInteligenteMentoresTareas.Data",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Amenity]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AmenityInterest_Ctlg]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetRoleClaims]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserClaims]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserLogins]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUsers]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserTokens]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[BankAccount]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[BillingAddress]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Booking]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[BookingFacility]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[BookingPrice]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[BookingStatus_Ctlg]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CfgListingTypeAmenity]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CfgListingTypeFacility]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[City]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Country]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Currency_Ctlg]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Facility]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FacilityCategory_Ctlg]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Gender_Ctlg]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Guest]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[GuestPaymentMethod]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Host]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[HostInterest]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Interest]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Language]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Listing]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingAmenity]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingDateLock]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingFacility]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingFacilityDetail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingImage]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingInterest]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingPrice]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingRate]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingReview]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ListingType_Ctlg]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Login]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[LoginPassword]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[LogItem]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Payment]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PaymentBankTransfer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PaymentMethodType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PaymentServiceProvider]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PaymentStatus]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PriceType_Ctlg]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SettingProviderAuth]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[State]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[User]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserLanguage]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "CQ-LPHGARCIA.TattoDraft",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}

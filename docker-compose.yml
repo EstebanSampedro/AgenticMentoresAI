@@ -1,0 +1,65 @@
+services:
+  api:
+    image: ${REGISTRY}/${REPOSITORY}/api:${VERSION}-${BRANCH}
+    build:
+      context: ./AgentsAI
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app
+      - AZURE_OPENAI_API_KEY=393e68dd
+      - AZURE_OPENAI_API_VERSION=2025-03-01-preview
+      - AZURE_OPENAI_ENDPOINT=https://openai-gpt4-innovac.openai.azure.com
+      - AZURE_OPENAI_DEPLOYMENT=gpt-4.1-mini-mv
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+  back:
+    image: ${REGISTRY}/${REPOSITORY}/back:${VERSION}-${BRANCH}
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    volumes:
+      - /home/nicolas/nicolas.keytab:/etc/keytabs/udlamentoresai.keytab
+  tasks:
+    image: ${REGISTRY}/${REPOSITORY}/tasks:${VERSION}-${BRANCH}
+    build:
+      context: ./Tasks
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    restart: unless-stopped
+  analysis:
+    image: ${REGISTRY}/${REPOSITORY}/analysis:${VERSION}-${BRANCH}
+    build:
+      context: ./Analysis
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    restart: unless-stopped
+  front:
+    image: ${REGISTRY}/${REPOSITORY}/front:${VERSION}-${BRANCH}
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_BASE=https://pruebasmentoresverdes.academikus.com/backend
+        - VITE_API_SignalR=https://pruebasmentoresverdes.academikus.com/tasks
+        - VITE_APPINSIGHTS_CONNECTION_STRING=InstrumentationKey=45126610-c8a7-4092-a844-097b92132745;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=460be0ab-dce0-431b-9750-e5e419f7336b
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+volumes:
+  db_data:
+    driver: local

@@ -1,0 +1,163 @@
+.student-list {
+    width: 320px;
+    font-family: 'Source Sans Pro', sans-serif !important;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Asegura que ocupe toda la altura de la ventana */
+}
+
+/*Encabezado de lista estudiantes*/
+.headerSidebar {
+    display: flex;
+    align-items: center;
+    max-height: 79px;
+    justify-content: space-between;
+    padding: 1.9rem 1rem;
+    border-bottom: 1px solid #828282;
+    flex-shrink: 0;
+}
+
+.headerSidebar h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.sidebar-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.headerSidebar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.headerSidebar button img {
+    width: 20px;
+    height: 15px;
+}
+/* Barra lateral de estudiantes y búsqueda para scroll */
+.SidelbarPanel{
+    overflow-y: auto;
+    flex-grow: 1;
+    /* Ocupa el espacio restante disponible */
+    padding: 0.5rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+.sidebarPanel::-webkit-scrollbar-button {
+    display: none;
+}
+.SidelbarPanel::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+.SidelbarPanel::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* Lista de estudiantes*/
+.sidebarList {
+    padding-right: 8px;
+}
+
+.section h4 {
+    cursor: pointer;
+    font-size: 0.7rem;
+    color: var(--subtitle-color);
+    margin-bottom: 0.2rem;
+    font-weight: 400;
+}
+
+.student-item {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.student-item.selected {
+    background: var(--select-item-bg);
+}
+
+.avatar {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: var(--avatar-color);
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.initials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--text-color);    
+    background: var(--avatar-color);
+}
+
+.alert-icon {
+    position: relative;
+    bottom: 16px;
+    left: 40px;
+    width: 15px;
+    height: 15px;
+    z-index: 10;
+    margin: -10px;
+}
+
+.details {
+    flex: 1;
+}
+
+.name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preview {
+    font-size: 0.70rem;
+    color: var(--text-color);
+}
+
+.date {
+    font-size: 0.70rem;
+    color: var(--subtitle-color);
+}
+
+.preview.unread {
+    font-weight: 800;    
+    text-shadow: 0.1px 0.1px 0px  #fff;    
+}
+
+@media (max-width: 768px) {
+    .student-list {
+        width: 100%;
+
+    }
+
+}
